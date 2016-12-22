@@ -1,0 +1,22 @@
+{
+  "name": "test",
+  "version": "1.0.0",
+  "description": "tests",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch-css": "node-sass --watch --source-map true styles/main.scss styles/main.css --output-style=expanded",
+    "translate-js": "babel --watch script-es6.js --out-file script.js --source-maps",
+    "watch-js": "watchify script-es6.js -o script.js -t -d [ babelify --presets[es2015]]",
+    "start": "npm run watch-js & watch-css"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "node-sass": "*",
+    "babel-preset-es2015": "*",
+    "browserify": "*",
+    "watchify": "*",
+    "babelify": "*"
+  }
+}
